@@ -49,6 +49,7 @@ Route::get('/work', function () {
 
 
 
+//Admin route group
 Route::get('/admin', function () {
     return view('admin.home');
 })->name('admin-home');
@@ -59,16 +60,17 @@ Route::get('/admin-about', function () {
 
 
 
-//Admin route group
 Route::get('/admin-blog', function () {
     return view('admin.blog');
 })->name('admin-blog');
 
-Route::get('/admin-blog-list', function () {
-    return view('admin.blog');
-})->name('admin-blog-list');
+Route::get('/admin-blog-list', 'Admin\BlogController@showArticles')
+    ->name('admin-blog-list');
 
-Route::post('/admin-blog-add', 'Admin/BlogController@add')
+Route::get('/admin-blog-add-form', 'Admin\BlogController@getFrom')
+    ->name('admin-blog-add-form');
+
+Route::post('/admin-blog-add', 'Admin\BlogController@add')
     ->name('admin-blog-add');
 
 Route::get('/admin-contact', function () {

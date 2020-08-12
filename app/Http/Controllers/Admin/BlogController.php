@@ -13,6 +13,16 @@ class BlogController extends Controller
         //
     }
 
+    public function getFrom(){
+        return view('admin.add-article');
+    }
+
+    public function showArticles(){
+        $articles = Articles::all();
+
+        return view('admin.blog', ['articles' => $articles]);
+    }
+
     public function getArticle(Request $req, $id)
     {
         // $article = Articles::findOrFail($id);
