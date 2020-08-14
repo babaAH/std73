@@ -64,6 +64,10 @@ Route::get('/admin-blog', function () {
     return view('admin.blog');
 })->name('admin-blog');
 
+Route::post('/save-article', function(){
+    // return view('home');
+})->name('save-articale');
+
 Route::get('/admin-blog-list', 'Admin\BlogController@showArticles')
     ->name('admin-blog-list');
 

@@ -37,5 +37,10 @@ class ContactController extends Controller
 		// echo "asdasd";
 		return view('home');
     	
-    }
+	}
+	
+	public function saveArticle(){
+		//todo
+		
+	}
 }
