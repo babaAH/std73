@@ -19,7 +19,7 @@ RUN apt-get clean -y
 # RUN useradd -u 1000 -ms /bin/bash -g www-data www-data
 
 RUN chown -R www-data:www-data /var/www
-
+COPY --chown=www-data:www-data . /var/www
 # RUN chmod 775 /var/www/storage && \
 #     chmod 775 /var/www/storage/logs
 
