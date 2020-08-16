@@ -14,16 +14,16 @@ RUN apt-get install curl && \
 RUN apt-get clean -y
 
 
-# RUN groupadd -g 1000 www-data
-# RUN usermod -u 1000 www-data 
-# RUN useradd -u 1000 -ms /bin/bash -g www-data www-data
+# RUN groupadd -g 1000 root
+# RUN usermod -u 1000 root 
+# RUN useradd -u 1000 -ms /bin/bash -g root root
 
-RUN chown -R www-data:www-data /var/www
-COPY --chown=www-data:www-data . /var/www
-# RUN chmod 775 /var/www/storage && \
-#     chmod 775 /var/www/storage/logs
+RUN chown -R root:root /var/www
+# COPY --chown=root:root . /var/www
+RUN chmod -R 755 /var/www/storage && \
+    chmod -R 755 /var/www/storage/logs
 
-USER www-data
+USER root
 
 EXPOSE 9000
 
