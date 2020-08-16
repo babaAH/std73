@@ -14,9 +14,9 @@ RUN apt-get install curl && \
 RUN apt-get clean -y
 
 
-RUN groupadd -g 1000 www-data && \
-    usermod -u 1000 www-data && \
-    useradd -u 1000 -ms /bin/bash -g www-data www-data
+# RUN groupadd -g 1000 www-data
+# RUN usermod -u 1000 www-data 
+RUN useradd -u 1000 -ms /bin/bash -g www-data www-data
 
 RUN chown -R www-data:www-data /var/www
 
