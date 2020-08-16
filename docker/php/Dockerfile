@@ -20,8 +20,8 @@ RUN apt-get clean -y
 
 RUN chown -R root:root /var/www
 # COPY --chown=root:root . /var/www
-RUN chmod -R 755 /var/www/storage && \
-    chmod -R 755 /var/www/storage/logs
+# RUN chmod -R 755 /var/www/storage && \
+#     chmod -R 755 /var/www/storage/logs
 
 USER root
 
