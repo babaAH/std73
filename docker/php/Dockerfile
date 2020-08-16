@@ -14,8 +14,9 @@ RUN apt-get install curl && \
 RUN apt-get clean -y
 
 RUN chown -R www-data:www-data /var/www
-
-
+RUN sudo chmod 775 ./storage && \
+    sudo chmod 775 ./storage/logs
+    
 EXPOSE 9000
 
 CMD ["php-fpm"]
