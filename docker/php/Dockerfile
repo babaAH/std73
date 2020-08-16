@@ -14,8 +14,8 @@ RUN apt-get install curl && \
 RUN apt-get clean -y
 
 RUN chown -R www-data:www-data /var/www
-RUN chmod 775 ./storage && \
-    chmod 775 ./storage/logs
+RUN chmod 775 /var/www/storage && \
+    chmod 775 /var/www/storage/logs
 
 EXPOSE 9000
 
