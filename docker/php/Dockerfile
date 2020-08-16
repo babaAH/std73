@@ -1,6 +1,6 @@
 FROM php:7.4.5-fpm
 
-
+WORKDIR /var/www
 RUN apt-get update && apt-get install -y libpq-dev git zip unzip && apt-get clean 
 
 
@@ -13,12 +13,17 @@ RUN apt-get install curl && \
 
 RUN apt-get clean -y
 
-RUN usermod -u 1000 www-data
 
-RUN chown -R www-data:www-data /var/www
+RUN groupadd -g 1000 www &&\
+    RUN usermod -u 1000 root   
+    RUN useradd -u 1000 -ms /bin/bash -g root root
+
+RUN chown -R root:root /var/www
 
 # RUN chmod 775 /var/www/storage && \
 #     chmod 775 /var/www/storage/logs
+
+USER root
 
 EXPOSE 9000
 
