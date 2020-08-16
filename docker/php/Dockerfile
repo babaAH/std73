@@ -13,6 +13,8 @@ RUN apt-get install curl && \
 
 RUN apt-get clean -y
 
+RUN usermod -u 1000 www-data
+
 RUN chown -R www-data:www-data /var/www
 
 # RUN chmod 775 /var/www/storage && \
