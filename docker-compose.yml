@@ -12,7 +12,7 @@ services:
   mysql:
     image: mysql:5.7.29
     ports:
-      - 3306:3306
+      - 33061:3306
     environment:
       MYSQL_DATABASE: laravel
       MYSQL_ROOT_PASSWORD: passwd
