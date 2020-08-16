@@ -13,6 +13,7 @@ RUN apt-get install curl && \
 
 RUN apt-get clean -y
 
+RUN chown -R www-data:www-data /var/www
 
 
 EXPOSE 9000
